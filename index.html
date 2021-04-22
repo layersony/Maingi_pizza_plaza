@@ -4,67 +4,67 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- styles -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Pizza Plaza</title>
 </head>
 <body>
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <label for="pizza">Pizza Type</label>
-        <select name="pizza" id="tpizza">
-          <option value="pizza1">Pizza1</option>
-          <option value="pizza2">Pizza2</option>
-          <option value="pizza3">Pizza3</option>
-          <option value="pizza4">Pizza4</option>
-        </select>
-
-        <div id="size">
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="small" checked>
-              Small
-            </label>
+        <form action="">
+          <label for="pizza">Pizza Type</label>
+          <select name="pizza" id="tpizza">
+            <option value="pizza1">Pizza1</option>
+            <option value="pizza2">Pizza2</option>
+            <option value="pizza3">Pizza3</option>
+            <option value="pizza4">Pizza4</option>
+          </select>
+  
+          <div id="size">
+            <div class="radio">
+              <label><input type="radio" name="size" value="small" checked>Small
+              </label>
+            </div>
+            
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="medium">Medium
+              </label>
+            </div>
+            
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="large">Large
+              </label>
+            </div>
+            
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="extra-large">Extra Large
+              </label>
+            </div>
           </div>
-          
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="medium">
-              Medium
-            </label>
-          </div>
-          
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="large">
-              Large
-            </label>
-          </div>
-          
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="extra-large">
-              Extra Large
-            </label>
-          </div>
-        </div>
-
-        <label for="pizza">Pizza Crust</label>
-        <select name="pizza" id="tpizza">
-          <option value="pizza1">Pizza1</option>
-          <option value="pizza2">Pizza2</option>
-          <option value="pizza3">Pizza3</option>
-          <option value="pizza4">Pizza4</option>
-        </select>
-
-        <label for="pizza">Pizza Toppings</label>
-        <select name="pizza" id="tpizza">
-          <option value="pizza1">Pizza1</option>
-          <option value="pizza2">Pizza2</option>
-          <option value="pizza3">Pizza3</option>
-          <option value="pizza4">Pizza4</option>
-        </select>
-
-        
+  
+          <label for="pizza">Pizza Crust</label>
+          <select name="pizza" id="tpizza">
+            <option value="pizza1">Pizza1</option>
+            <option value="pizza2">Pizza2</option>
+            <option value="pizza3">Pizza3</option>
+            <option value="pizza4">Pizza4</option>
+          </select>
+          <br>
+          <label for="pizza">Pizza Toppings</label>
+          <select name="pizza" id="tpizza">
+            <option value="pizza1">Pizza1</option>
+            <option value="pizza2">Pizza2</option>
+            <option value="pizza3">Pizza3</option>
+            <option value="pizza4">Pizza4</option>
+          </select>
+          <br>
+          <input type="submit" value="Submit">
+        </form>        
       </div>
 
     </div>
