@@ -18,13 +18,14 @@
       <div class="col-md-6">
         <form id="pizza-form">
           <label for="pizza">Pizza Type</label>
-          <select name="pizza" id="tpizza">
+          <select name="pizza" id="tpizza" class="form-control mb-3">
             <option value="pizza1">Pizza1</option>
             <option value="pizza2">Pizza2</option>
             <option value="pizza3">Pizza3</option>
             <option value="pizza4">Pizza4</option>
           </select>
-  
+
+          <label for="pizza">Pizza Size</label>
           <div id="size">
             <div class="radio">
               <label>
@@ -52,7 +53,7 @@
           </div>
   
           <label for="crust">Pizza Crust</label>
-          <select name="crust" id="crustpizza">
+          <select name="crust" id="crustpizza" class="form-control mb-3">
             <option value="crust1">crust1</option>
             <option value="crust2">crust2</option>
             <option value="crust3">crust3</option>
@@ -60,7 +61,7 @@
           </select>
           <br>
           <label for="topp">Pizza Toppings</label>
-          <select name="topp" id="topppizza">
+          <select name="topp" id="topppizza" class="form-control mb-3">
             <option value="topp1">topp1</option>
             <option value="topp2">topp2</option>
             <option value="topp3">topp3</option>
@@ -70,7 +71,25 @@
           <input type="submit" value="Submit">
         </form>        
       </div>
+      <div class="col-md-6">
+        <h2>Checkout</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Size</th>
+              <th>Crust</th>
+              <th>Toppings</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+  
+          <tbody id="checkout">
 
+          </tbody>
+        </table>
+        <input type="button" value="Pay" id="">
+      </div>
     </div>
   </div>
 </body>

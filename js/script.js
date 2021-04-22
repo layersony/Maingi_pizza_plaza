@@ -2,11 +2,12 @@
 
 //add pizza
 
-function Pizza(type, size, crust, topping){
+function Pizza(type, size, crust, topping, price){
   this.type = type;
   this.size = size;
   this.crust = crust;
   this.topping = topping;
+  this.price = price;
 }
 
 $(document).ready(function(){
@@ -17,11 +18,8 @@ $(document).ready(function(){
     let pizzacrust = $("#crustpizza").val();
     let pizzatopp = $("#topppizza").val();
 
-
-    console.log(pizzatype);
-    console.log(pizzasize);
-    console.log(pizzacrust);
-    console.log(pizzatopp);
-
+    let pizzaOrder = new Pizza(pizzatype,pizzasize, pizzacrust, pizzatopp)
+    
+    $("#checkout").append("<tr><td>"+pizzaOrder.type+"</td><td>"+pizzaOrder.size+"</td><td>"+pizzaOrder.crust+"</td><td>"+pizzaOrder.topping+"</td><td>"+pizzaOrder.price+"</td></tr>")
   });
 });
