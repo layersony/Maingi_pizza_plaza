@@ -16,7 +16,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <form action="">
+        <form id="pizza-form">
           <label for="pizza">Pizza Type</label>
           <select name="pizza" id="tpizza">
             <option value="pizza1">Pizza1</option>
@@ -27,7 +27,8 @@
   
           <div id="size">
             <div class="radio">
-              <label><input type="radio" name="size" value="small" checked>Small
+              <label>
+                <input type="radio" name="size" value="small">Small
               </label>
             </div>
             
@@ -50,20 +51,20 @@
             </div>
           </div>
   
-          <label for="pizza">Pizza Crust</label>
-          <select name="pizza" id="tpizza">
-            <option value="pizza1">Pizza1</option>
-            <option value="pizza2">Pizza2</option>
-            <option value="pizza3">Pizza3</option>
-            <option value="pizza4">Pizza4</option>
+          <label for="crust">Pizza Crust</label>
+          <select name="crust" id="crustpizza">
+            <option value="crust1">crust1</option>
+            <option value="crust2">crust2</option>
+            <option value="crust3">crust3</option>
+            <option value="crust4">crust4</option>
           </select>
           <br>
-          <label for="pizza">Pizza Toppings</label>
-          <select name="pizza" id="tpizza">
-            <option value="pizza1">Pizza1</option>
-            <option value="pizza2">Pizza2</option>
-            <option value="pizza3">Pizza3</option>
-            <option value="pizza4">Pizza4</option>
+          <label for="topp">Pizza Toppings</label>
+          <select name="topp" id="topppizza">
+            <option value="topp1">topp1</option>
+            <option value="topp2">topp2</option>
+            <option value="topp3">topp3</option>
+            <option value="topp4">topp4</option>
           </select>
           <br>
           <input type="submit" value="Submit">
