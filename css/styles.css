@@ -1,23 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Indie+Flower&family=Original+Surfer&display=swap');
+
+*{
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Indie Flower', 'Dancing Script', cursive;
+  /* font-family: 'Original Surfer', cursive; */
+}
 .fin{
   display: none;
 }
 .delivr{
   display: none;
 }
-
+h3{
+  padding: 5px;
+}
 /**************
 ****nav****
 ***************/
 .navbar-brand{
-  color: #a52a2a;
+  color: #000000;
   font-family: 'Indie Flower', cursive;
   font-size: 55px;
-  /* transition: ease-in 0.5s; */
+  transition: ease-in 0.5s;
 }
 .navbar-header a:hover {
-  color: #a52a2a;
+  color: black;
   font-size: 60px;
-  /* transition: ease-in-out 0.5s; */
+  transition: ease-in-out 0.5s;
+}
+/**************
+****header****
+***************/
+header{
+  background-color: rgba(0, 0, 0, 0.397);
+  background-image: url("/images/mainbg.jpg");
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  min-height: 70vh;
+  color: #ffffff;
+}
+/* header>.container-fluid{
+  background-color: violet;
+} */
+header>.container-fluid>.row>.left{
+  padding: 10px;
+}
+header>.container-fluid>.row>.right{
+  background-color: blue;
+  padding: 10px;
+}
+.row>.left h1{
+  font-size: 80px;
+  padding: 11px;
+}
+p{
+  font-size: 25px;
+  padding: 11px;
+
 }
 
 /**************
