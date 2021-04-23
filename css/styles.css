@@ -6,8 +6,11 @@
   padding: 0;
   /* font-family: 'Indie Flower', 'Dancing Script', cursive; */
   font-family: 'Original Surfer', cursive;
-
 }
+html{
+  scroll-behavior: smooth;
+}
+
 .fin{
   display: none;
 }
@@ -52,6 +55,16 @@ header>.container>.row>.left{
 header>.container>.row>.left h1{
   padding: 10px;
 }
+header>.container>.row>.left p{
+  background-color: rgba(0, 0, 0, 0.644);
+  transition: ease-in-out 0.3s;
+  border-radius: 10px;
+}
+header>.container>.row>.left p:hover{
+  background-color: #a52a2a;
+  font-size: 30px;
+  border-radius: 10px;
+}
 header>.container>.row>.right{
   background-color: beige;
   padding: 10px;
@@ -77,6 +90,20 @@ p{
 #rght{
   padding-left: 10px;
 }
+#glow {
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
 
 /**************
 ****order pizza****
@@ -100,6 +127,10 @@ label{
   border-style: ridge;
   border-radius: 10px;
   padding: 10px;
+}
+input[type=button]:hover,
+input[type=submit]:hover{
+  background-color: #a52a2a;
 }
 /**************
 ****footer****
@@ -128,8 +159,8 @@ footer>.social ol{
 }
 footer>.social ol li {
   padding: 5px;
-  font-size: 25px;
-  /* text-decoration: none; */
+  font-size: 15px;
+  text-decoration: none;
   color: #ffffff;
 }
 
@@ -142,7 +173,7 @@ footer>.social ol li >.fa {
 footer>.social ol li>.fa:hover{
   font-size: 35px;
   color: #ffffff;
-  transition: ease-in 0.5s;
+  transition: ease-in 0.1s;
 }
 
 footer>.footer_info p{
