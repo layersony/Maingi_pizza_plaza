@@ -9,8 +9,8 @@ function Pizza(size, crust, topping, price){
   this.price = price;
 }
 
-crustarr = ['Bagels','FlatBread', 'Thin-Crust', 'Sicilian Style', 'Cheese-Stuffed Crust',' Neapolitan Crust'];
-toppingarr = ['Pepperoni', 'Mushrooms', 'Onions', 'Sausage', 'Extra cheese', 'Black olives', 'Green peppers']
+crustarr = ['20|Bagels','30|FlatBread', '40|Thin-Crust', '50|Sicilian Style', '60|Cheese-Stuffed Crust','70|Neapolitan Crust'];
+toppingarr = ['110|Pepperoni', '120|Mushrooms', '130|Onions', '140|Sausage', '150|Extra cheese', '160|Black olives', '170|Green peppers']
 
 $(document).ready(function(){
   $("#pizza-form").submit(function(event){
@@ -21,26 +21,36 @@ $(document).ready(function(){
 
     let pizzaOrder = new Pizza(pizzasize, pizzacrust, pizzatopp);
 
-    price_small = 0;
-    price_medium = 0;
-    price_large = 0;
-    price_xlarge = 0;
+    total = 0
     
     if (pizzasize === "small"){
-      price_small = 500;
+      total += 400;
     }else if(pizzasize === "medium"){
-      price_medium += 900;
+      total += 750;
     }else if(pizzasize === "large"){
-      price_large += 1500;
+      total += 1300;
     }else if(pizzasize === "xlarge"){
-      price_small += 2000;
+      total += 1800;
     }else{
       alert("Choose One");
     }
 
-    if (pizzasize === "small"){
-      price_small 
-    }
+    for (let i in crustarr){
+      let pair = crustarr[i].split("|");
+      if (pair[1] == pizzacrust){
+        total += parseInt(pair[0]);
+      }
+    };
+
+    for (let i in toppingarr){
+      let pair = toppingarr[i].split("|");
+      if (pair[1] == pizzatopp){
+        total += parseInt(pair[0]);
+      }
+    };
+
+    console.log(total)
+
 
     $("#checkout").append("<tr><td>"+pizzaOrder.size+"</td><td>"+pizzaOrder.crust+"</td><td>"+pizzaOrder.topping+"</td><td>"+pizzaOrder.price+"</td></tr>")
   });
@@ -51,16 +61,18 @@ $(window).on("load", function () {
   let toppingselect = $("#topppizza")
 
   for (let i in crustarr){
+    let pair = crustarr[i].split("|");
     let newOption = document.createElement("option");
-    newOption.value = crustarr[i];
-    newOption.innerHTML = crustarr[i];
+    newOption.value = pair[1];
+    newOption.innerHTML = pair[1];
     crustselect.append(newOption);
   };
 
   for (let i in toppingarr){
+    let pair = toppingarr[i].split("|");
     let newOption = document.createElement("option");
-    newOption.value = toppingarr[i];
-    newOption.innerHTML = toppingarr[i];
+    newOption.value = pair[1];
+    newOption.innerHTML = pair[1];
     toppingselect.append(newOption);
   };
 });
