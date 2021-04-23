@@ -2,27 +2,28 @@
 
 //add pizza
 
-function Pizza(size, crust, topping, price){
+function Pizza(size, crust, topping, quan, total){
   this.size = size;
   this.crust = crust;
   this.topping = topping;
-  this.price = price;
+  this.quan = quan;
+  this.total = total;
 }
 
 crustarr = ['20|Bagels','30|FlatBread', '40|Thin-Crust', '50|Sicilian Style', '60|Cheese-Stuffed Crust','70|Neapolitan Crust'];
 toppingarr = ['110|Pepperoni', '120|Mushrooms', '130|Onions', '140|Sausage', '150|Extra cheese', '160|Black olives', '170|Green peppers']
 
+fintotal = 0;
 $(document).ready(function(){
   $("#pizza-form").submit(function(event){
     event.preventDefault();
     let pizzasize = $("input:radio[name=size]:checked").val();
     let pizzacrust = $("#crustpizza").val();
     let pizzatopp = $("#topppizza").val();
-
-    let pizzaOrder = new Pizza(pizzasize, pizzacrust, pizzatopp);
+    let pizzaquanity = parseInt($("#quantity").val());
 
     total = 0
-    
+
     if (pizzasize === "small"){
       total += 400;
     }else if(pizzasize === "medium"){
@@ -49,10 +50,22 @@ $(document).ready(function(){
       }
     };
 
-    console.log(total)
+    let finaltotal = total * pizzaquanity;
+    let pizzaOrder = new Pizza(pizzasize, pizzacrust, pizzatopp, pizzaquanity, finaltotal);
 
+    fintotal += finaltotal
 
-    $("#checkout").append("<tr><td>"+pizzaOrder.size+"</td><td>"+pizzaOrder.crust+"</td><td>"+pizzaOrder.topping+"</td><td>"+pizzaOrder.price+"</td></tr>")
+    $("#checkout").prepend("<tr id='pizzaline'><td>"+pizzaOrder.size+"</td><td>"+pizzaOrder.crust+"</td><td>"+pizzaOrder.topping+"</td><td>"+pizzaOrder.quan+"</td><td>"+pizzaOrder.total+"</td></tr>")
+
+    $("#pizzaline").last().click(function(){
+      $(this).closest("tr").remove();
+      fintotal -= parseInt(pizzaOrder.total)
+    });
+
+    $("#chckttl").click(function(){
+      $("#ttl").text(fintotal);
+    });
+    
   });
 });
 

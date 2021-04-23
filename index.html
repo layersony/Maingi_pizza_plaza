@@ -53,6 +53,10 @@
           <select name="topp" id="topppizza" class="form-control mb-3">
             <option value="">----</option>
           </select>
+
+          <label for="topp">Quantity</label>
+          <input type="number" name="" id="quantity"  class="form-control mb-3">
+
           <br>
           <input type="submit" value="Submit">
         </form>        
@@ -66,14 +70,18 @@
               <th>Crust</th>
               <th>Toppings</th>
               <th>Quantity</th>
+              <th>Total</th>
             </tr>
           </thead>
   
-          <tbody id="checkout">
+          <tbody id="checkout" class="main">
 
           </tbody>
+
         </table>
-        <input type="button" value="Pay" id="pay">
+        <p>CheckOut Total: Ksh <span id="ttl"></span>/=</p>
+        <input type="button" value="Check Total" id="chckttl">
+        <input type="button" value="Order" id="pay">
       </div>
     </div>
   </div>
