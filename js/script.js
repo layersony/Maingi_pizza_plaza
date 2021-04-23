@@ -67,15 +67,20 @@ $(document).ready(function(){
     });
 
     $("#pay").click(function(){
-      let location = prompt("Do you Want to Collect of Be delivered");
-      if (location === "Collect"){
-        alert("It will be ready in 1 hour");
-      }else if (location  === "Deliver"){
-        let place = prompt("Enter you Location");
-        alert("Will be Delivered in 1 hour to your Resident "+ place)
-      }
+      $(".fin").toggle()
+      $("#confr").click(function(){
+        let location = $("input:radio[name=pickup]:checked").val();
+        if (location === "collect"){
+          $(".delivr").hide();
+          alert("Collect within 1 hour");
+        }else if (location  === "deliver"){
+          $(".delivr").toggle();
+          $("#ok").click(()=>{alert("Location Recorded");$(".delivr").toggle()})
+        }else{
+          alert("Choose a Collect of Delivery")
+        }
+      })
     });
-    
   });
 });
 
