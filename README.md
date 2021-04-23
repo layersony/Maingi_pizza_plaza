@@ -62,6 +62,10 @@ To access this project on your local files, you can clone it using these steps
 
 ---
 
+## Known Bugs
+
+* Sometimes the Order Button fails to Function, One Needs to Load the Website Again
+
 ## Technologies Used
 HTML
 
