@@ -86,7 +86,9 @@ $(document).ready(function(){
 
 $(window).on("load", function () {
   let crustselect = $("#crustpizza");
-  let toppingselect = $("#topppizza")
+  let toppingselect = $("#topppizza");
+  let crustMenu = $('#crustMenu');
+  let toppMenu = $('#toppMenu');
 
   for (let i in crustarr){
     let pair = crustarr[i].split("|");
@@ -94,6 +96,17 @@ $(window).on("load", function () {
     newOption.value = pair[1];
     newOption.innerHTML = pair[1];
     crustselect.append(newOption);
+
+    let row = document.createElement("tr");
+  	let cell = document.createElement("td");
+    let cell2 = document.createElement("td");
+    let cellText = document.createTextNode(pair[1]);
+    let cellText2 = document.createTextNode(pair[0]);
+    cell.appendChild(cellText);
+    cell2.appendChild(cellText2);
+    row.appendChild(cell);
+    row.appendChild(cell2);
+    crustMenu.append(row);
   };
 
   for (let i in toppingarr){
@@ -102,5 +115,17 @@ $(window).on("load", function () {
     newOption.value = pair[1];
     newOption.innerHTML = pair[1];
     toppingselect.append(newOption);
+
+    let row = document.createElement("tr");
+  	let cell = document.createElement("td");
+    let cell2 = document.createElement("td");
+    let cellText = document.createTextNode(pair[1]);
+    let cellText2 = document.createTextNode(pair[0]);
+    cell.appendChild(cellText);
+    cell2.appendChild(cellText2);
+    row.appendChild(cell);
+    row.appendChild(cell2);
+    toppMenu.append(row);
   };
+
 });

@@ -4,8 +4,9 @@
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  font-family: 'Indie Flower', 'Dancing Script', cursive;
-  /* font-family: 'Original Surfer', cursive; */
+  /* font-family: 'Indie Flower', 'Dancing Script', cursive; */
+  font-family: 'Original Surfer', cursive;
+
 }
 .fin{
   display: none;
@@ -15,6 +16,7 @@
 }
 h3{
   padding: 5px;
+  color: #000000;
 }
 /**************
 ****nav****
@@ -40,18 +42,20 @@ header{
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: darken;
-  min-height: 70vh;
+  min-height: 80vh;
   color: #ffffff;
 }
 /* header>.container-fluid{
   background-color: violet;
 } */
-header>.container-fluid>.row>.left{
+header>.container-fluid>.row>.left h1{
   padding: 10px;
 }
-header>.container-fluid>.row>.right{
-  background-color: blue;
+header>.container>.row>.right{
+  background-color: beige;
   padding: 10px;
+  border-radius: 10px;
+
 }
 .row>.left h1{
   font-size: 80px;
@@ -60,8 +64,18 @@ header>.container-fluid>.row>.right{
 p{
   font-size: 25px;
   padding: 11px;
-
 }
+
+/* #lft{
+  background-color: brown;
+  color: white;
+}
+#cntr{
+  background-color: chartreuse;
+}
+#rght{
+  background-color: red;
+} */
 
 /**************
 ****footer****
