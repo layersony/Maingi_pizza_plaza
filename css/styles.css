@@ -4,3 +4,58 @@
 .delivr{
   display: none;
 }
+
+/**************
+****nav****
+***************/
+.navbar-brand{
+  color: #a52a2a;
+  font-family: 'Indie Flower', cursive;
+  font-size: 55px;
+  /* transition: ease-in 0.5s; */
+}
+.navbar-header a:hover {
+  color: #a52a2a;
+  font-size: 60px;
+  /* transition: ease-in-out 0.5s; */
+}
+
+/**************
+****footer****
+***************/
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #3b3b3b;
+}
+footer>.social{
+  background-color: transparent;
+}
+footer>.social ol{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+
+footer>.social ol li>.fa {
+  padding: 5px;
+  font-size: 25px;
+  text-decoration: none;
+  color: #ffffff;
+}
+footer>.social ol li>.fa:hover{
+  font-size: 35px;
+  color: #ffffff;
+  transition: ease-in 0.5s;
+}
+
+footer>.footer_info p{
+  font-size: 15px;
+}
