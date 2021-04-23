@@ -14,7 +14,7 @@
 .delivr{
   display: none;
 }
-h3{
+h2, h3, h4{
   padding: 5px;
   color: #000000;
 }
@@ -45,10 +45,11 @@ header{
   min-height: 80vh;
   color: #ffffff;
 }
-/* header>.container-fluid{
-  background-color: violet;
-} */
-header>.container-fluid>.row>.left h1{
+
+header>.container>.row>.left{
+  padding: 10px;
+}
+header>.container>.row>.left h1{
   padding: 10px;
 }
 header>.container>.row>.right{
@@ -66,17 +67,40 @@ p{
   padding: 11px;
 }
 
-/* #lft{
-  background-color: brown;
-  color: white;
+#lft{
+  border-right: 1px solid black;
 }
 #cntr{
-  background-color: chartreuse;
+  border-right: 1px solid black;
+
 }
 #rght{
-  background-color: red;
-} */
+  padding-left: 10px;
+}
 
+/**************
+****order pizza****
+***************/
+
+#pizza>.container{
+  padding: 10px;
+  margin: 20px auto;
+}
+#pizza>.container>.row{
+  padding: 5px;
+}
+label{
+  font-size: 20px;
+}
+#size label{
+  padding: 5px;
+}
+#pizza>.container>.row>.right{
+  background-color: rgba(0, 0, 0, 0.377);
+  border-style: ridge;
+  border-radius: 10px;
+  padding: 10px;
+}
 /**************
 ****footer****
 ***************/
@@ -89,6 +113,9 @@ footer{
   color: #ffffff;
   background-color: #3b3b3b;
 }
+footer h4{
+  color: #ffffff;
+}
 footer>.social{
   background-color: transparent;
 }
@@ -99,9 +126,14 @@ footer>.social ol{
   align-items: center;
   flex-direction: row;
 }
+footer>.social ol li {
+  padding: 5px;
+  font-size: 25px;
+  /* text-decoration: none; */
+  color: #ffffff;
+}
 
-
-footer>.social ol li>.fa {
+footer>.social ol li >.fa {
   padding: 5px;
   font-size: 25px;
   text-decoration: none;

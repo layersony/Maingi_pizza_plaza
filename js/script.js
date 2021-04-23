@@ -10,8 +10,8 @@ function Pizza(size, crust, topping, quan, total){
   this.total = total;
 }
 
-crustarr = ['20|Bagels','30|FlatBread', '40|Thin-Crust', '50|Sicilian Style', '60|Cheese-Stuffed Crust','70|Neapolitan Crust'];
-toppingarr = ['110|Pepperoni', '120|Mushrooms', '130|Onions', '140|Sausage', '150|Extra cheese', '160|Black olives', '170|Green peppers']
+crustarr = ['110|Bagels','120|FlatBread', '140|Thin-Crust', '155|Sicilian Style', '170|Cheese-Stuffed Crust','100|Neapolitan Crust'];
+toppingarr = ['70|Pepperoni', '100|Mushrooms', '30|Onions', '60|Sausage', '110|Extra cheese', '60|Black olives', '50|Green peppers']
 
 fintotal = 0;
 $(document).ready(function(){
@@ -25,13 +25,13 @@ $(document).ready(function(){
     total = 0
 
     if (pizzasize === "small"){
-      total += 400;
+      total += 450;
     }else if(pizzasize === "medium"){
-      total += 750;
+      total += 800;
     }else if(pizzasize === "large"){
-      total += 1300;
+      total += 1350;
     }else if(pizzasize === "xlarge"){
-      total += 1800;
+      total += 1850;
     }else{
       alert("Choose One");
     }
@@ -75,7 +75,7 @@ $(document).ready(function(){
           alert("Collect within 1 hour");
         }else if (location  === "deliver"){
           $(".delivr").toggle();
-          $("#ok").click(()=>{alert("Location Recorded");$(".delivr").toggle()})
+          $("#ok").click(()=>{alert("Location Recorded, Delivery Cost Is 150");$(".delivr").toggle()})
         }else{
           alert("Choose a Collect of Delivery")
         }
