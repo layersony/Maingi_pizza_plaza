@@ -22,6 +22,7 @@ $(document).ready(function(){
     let pizzatopp = $("#topppizza").val();
     let pizzaquanity = parseInt($("#quantity").val());
 
+
     total = 0
 
     if (pizzasize === "small"){
@@ -33,7 +34,15 @@ $(document).ready(function(){
     }else if(pizzasize === "xlarge"){
       total += 1850;
     }else{
-      alert("Choose One");
+      alert("Choose Size");
+    }
+
+    if(pizzacrust === ""){
+      alert("Choose Pizza Crust");
+    }else if(pizzatopp === ""){
+      alert("Choose Pizza Toppings");
+    }else if (pizzaquanity <= 0){
+      alert("Quanity Ranges from 1 to 100")
     }
 
     for (let i in crustarr){
