@@ -84,31 +84,39 @@ $(document).ready(function(){
 
     fintotal += finaltotal
 
-    $("#checkout").prepend("<tr><td>"+pizzaOrder.size+"</td><td>"+pizzaOrder.crust+"</td><td>"+pizzaOrder.topping[0].topp1+","+pizzaOrder.topping[0].topp2+"</td><td>"+pizzaOrder.quan+"</td><td>"+pizzaOrder.total+"</td><td><i class='fa fa-trash-o' id='pizzaline' aria-hidden='true'></i></td></tr>")
-
-    $("#pizzaline").last().click(function(){
-      $(this).closest("tr").remove();
-      fintotal -= parseInt(pizzaOrder.total)
-    });
+    $("#checkout").prepend("<tr><td>"+pizzaOrder.size+"</td><td>"+pizzaOrder.crust+"</td><td>"+pizzaOrder.topping[0].topp1+","+pizzaOrder.topping[0].topp2+"</td><td>"+pizzaOrder.quan+"</td><td>"+pizzaOrder.total+"</td><td><i class='fa fa-trash-o' id='pizzaline' aria-hidden='true'></i></td></tr>");
 
     $("#chckttl").click(function(){
       $("#ttl").text(fintotal);
     });
 
     $("#pay").click(function(){
-      $(".fin").toggle()
+      console.log('inside order')
+      $(".fin").show()
       $("#confr").click(function(){
+        console.log('inside confirm')
         let location = $("input:radio[name=pickup]:checked").val();
         if (location === "collect"){
-          $(".delivr").toggle();
+          $(".delivr").hide();
           alert("Collect within 1 hour");
+          document.getElementById("pizza-form").reset()
         }else if (location  === "deliver"){
-          $(".delivr").toggle();
-          $("#ok").click(()=>{alert("Delivery Cost Is 150. Total Cost Ksh " + (fintotal + 150) + "/=");$(".delivr").toggle()})
+          $(".delivr").show();
+          $("#ok").click(()=>{
+            alert("Delivery Cost Is 150. Total Cost Ksh " + (fintotal + 150) + "/=");
+            $(".delivr").hide()
+            document.getElementById("pizza-form").reset()
+          })
         }else{
-          alert("Choose a Collect of Delivery")
+          alert("Choose Collect / Delivery")
         }
       })
+    });
+
+    $("#pizzaline").last().click(function(){
+      $(this).closest("tr").remove();
+      console.log('removed ' + this.pizzaOrder)
+      fintotal -= parseInt(pizzaOrder.total)
     });
   });
 });
