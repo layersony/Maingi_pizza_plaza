@@ -71,6 +71,8 @@ To access this project on your local files, you can clone it using these steps
 ## Known Bugs
 
 * Sometimes the Order Button fails to Function, One Needs to Load the Website Again
+* Delivery Prompt Tends to Repeat Itself  a couple of Times before Closing
+* Site not 100% Responsive due to the Checkout Table for Screens with a max-width of 370px
 
 ## Technologies Used
 HTML
