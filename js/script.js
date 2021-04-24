@@ -84,7 +84,7 @@ $(document).ready(function(){
 
     fintotal += finaltotal
 
-    $("#checkout").prepend("<tr id='pizzaline'><td>"+pizzaOrder.size+"</td><td>"+pizzaOrder.crust+"</td><td>"+pizzaOrder.topping[0].topp1+","+pizzaOrder.topping[0].topp2+"</td><td>"+pizzaOrder.quan+"</td><td>"+pizzaOrder.total+"</td></tr>")
+    $("#checkout").prepend("<tr><td>"+pizzaOrder.size+"</td><td>"+pizzaOrder.crust+"</td><td>"+pizzaOrder.topping[0].topp1+","+pizzaOrder.topping[0].topp2+"</td><td>"+pizzaOrder.quan+"</td><td>"+pizzaOrder.total+"</td><td><i class='fa fa-trash-o' id='pizzaline' aria-hidden='true'></i></td></tr>")
 
     $("#pizzaline").last().click(function(){
       $(this).closest("tr").remove();
