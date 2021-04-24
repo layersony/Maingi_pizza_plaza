@@ -17,6 +17,10 @@ html{
 .delivr{
   display: none;
 }
+#toadd{
+  display: none;
+}
+
 h2, h3, h4{
   padding: 5px;
   color: #000000;
@@ -131,6 +135,17 @@ label{
 input[type=button]:hover,
 input[type=submit]:hover{
   background-color: #a52a2a;
+}
+#addtopp{
+  background-color: #6C757D;
+  font-size: 20px;
+  height: 30px;
+  width: 20px;
+  color: #fff;
+  border-radius: 5px;
+}
+#addtopp:hover{
+  background-color: brown;
 }
 /**************
 ****footer****

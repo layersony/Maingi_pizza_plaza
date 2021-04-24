@@ -5,10 +5,19 @@
 function Pizza(size, crust, topping, quan, total){
   this.size = size;
   this.crust = crust;
-  this.topping = topping;
+  this.topping = [];
   this.quan = quan;
   this.total = total;
 }
+
+function Topp(topp1, topp2=""){
+  this.topp1 = topp1;
+  this.topp2 = topp2;
+};
+
+Topp.prototype.addTopp = function(){
+  return this.topp1+","+this.topp2;
+};
 
 crustarr = ['110|Bagels','120|FlatBread', '140|Thin-Crust', '155|Sicilian Style', '170|Cheese-Stuffed Crust','100|Neapolitan Crust'];
 toppingarr = ['70|Pepperoni', '100|Mushrooms', '30|Onions', '60|Sausage', '110|Extra cheese', '60|Black olives', '50|Green peppers']
@@ -20,6 +29,7 @@ $(document).ready(function(){
     let pizzasize = $("input:radio[name=size]:checked").val();
     let pizzacrust = $("#crustpizza").val();
     let pizzatopp = $("#topppizza").val();
+    let pizzatopp2 = $("#addtopppizza").val();
     let pizzaquanity = parseInt($("#quantity").val());
 
 
@@ -59,12 +69,22 @@ $(document).ready(function(){
       }
     };
 
+    for (let i in toppingarr){
+      let pair = toppingarr[i].split("|");
+      if (pair[1] == pizzatopp2){
+        total += parseInt(pair[0]);
+      }
+    };
+
     let finaltotal = total * pizzaquanity;
     let pizzaOrder = new Pizza(pizzasize, pizzacrust, pizzatopp, pizzaquanity, finaltotal);
+    let pizzaOrderTop = new Topp(pizzatopp, pizzatopp2);
+
+    pizzaOrder.topping.push(pizzaOrderTop)
 
     fintotal += finaltotal
 
-    $("#checkout").prepend("<tr id='pizzaline'><td>"+pizzaOrder.size+"</td><td>"+pizzaOrder.crust+"</td><td>"+pizzaOrder.topping+"</td><td>"+pizzaOrder.quan+"</td><td>"+pizzaOrder.total+"</td></tr>")
+    $("#checkout").prepend("<tr id='pizzaline'><td>"+pizzaOrder.size+"</td><td>"+pizzaOrder.crust+"</td><td>"+pizzaOrder.topping[0].topp1+","+pizzaOrder.topping[0].topp2+"</td><td>"+pizzaOrder.quan+"</td><td>"+pizzaOrder.total+"</td></tr>")
 
     $("#pizzaline").last().click(function(){
       $(this).closest("tr").remove();
@@ -80,11 +100,11 @@ $(document).ready(function(){
       $("#confr").click(function(){
         let location = $("input:radio[name=pickup]:checked").val();
         if (location === "collect"){
-          $(".delivr").hide();
+          $(".delivr").toggle();
           alert("Collect within 1 hour");
         }else if (location  === "deliver"){
           $(".delivr").toggle();
-          $("#ok").click(()=>{alert("Location Recorded, Delivery Cost Is 150");$(".delivr").toggle()})
+          $("#ok").click(()=>{alert("Delivery Cost Is 150. Total Cost Ksh " + (fintotal + 150) + "/=");$(".delivr").toggle()})
         }else{
           alert("Choose a Collect of Delivery")
         }
@@ -96,6 +116,7 @@ $(document).ready(function(){
 $(window).on("load", function () {
   let crustselect = $("#crustpizza");
   let toppingselect = $("#topppizza");
+  let toppingselect2 = $("#addtopppizza");
   let crustMenu = $('#crustMenu');
   let toppMenu = $('#toppMenu');
 
@@ -125,6 +146,11 @@ $(window).on("load", function () {
     newOption.innerHTML = pair[1];
     toppingselect.append(newOption);
 
+    let newOption2 = document.createElement("option");
+    newOption2.value = pair[1];
+    newOption2.innerHTML = pair[1];
+    toppingselect2.append(newOption2);
+
     let row = document.createElement("tr");
   	let cell = document.createElement("td");
     let cell2 = document.createElement("td");
@@ -136,5 +162,7 @@ $(window).on("load", function () {
     row.appendChild(cell2);
     toppMenu.append(row);
   };
-
+  $("#addtopp").click(function(){
+    $("#toadd").toggle(500);
+  });
 });
