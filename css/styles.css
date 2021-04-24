@@ -8,6 +8,33 @@
   font-family: 'Original Surfer', cursive;
   cursor: pointer;
 }
+
+/* loader */
+
+#loader {
+  border: 10px double transparent;
+  border-radius: 60%;
+  border-top: 15px double brown;
+  width: 70px;
+  height: 70px;
+  animation: spin 0.5s linear infinite reverse;
+}
+
+@keyframes spin {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 html{
   scroll-behavior: smooth;
 }
