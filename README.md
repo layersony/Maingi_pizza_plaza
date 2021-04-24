@@ -50,6 +50,9 @@ To access this project on your local files, you can clone it using these steps
 3. Displays an Error Message if Pizza Quantity input is Left Blank
    - INPUT: ""
    - OUTPUT: Value Should be greater than 1, Quanity Ranges from 1 to 100
+7. Add Toppings
+   - INPUT: Click + Button
+   - OUTPUT: New Input appears for User to Select
 4. Check Total Button on Click
    - INPUT: Click Check Total Button
    - OUTPUT: Computes Total Cost of all pizza and Outputs Total
